@@ -1,0 +1,21 @@
+.navegationText{
+    color: aliceblue !important;
+    margin-bottom: 80px;
+    
+
+}
+
+.navbar .custom-text-color {
+    color: aliceblue !important;
+    /* border: solid black 5px; */
+}
+
+.custom-margin {
+    margin-bottom: 10px;
+    color: aliceblue !important;
+
+}
+
+.custom-text-color {
+    color: rgb(232, 225, 225); /* Cambia 'red' al color que desees */
+  }
