@@ -3,8 +3,17 @@ import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import NavDropdown from 'react-bootstrap/NavDropdown'
 import './navbar.css'
+import { useNavigate } from 'react-router-dom'
 
 function NavegationBar () {
+  const navigate = useNavigate()
+  const loginRoute = () => {
+    navigate('/login')
+  }
+  const signinRoute = () => {
+    navigate('/signin')
+  }
+
   return (
     <Navbar collapseOnSelect expand='lg' className='navegationText text-bg-danger'>
       <Container>
@@ -20,20 +29,20 @@ function NavegationBar () {
               <NavDropdown.Item href='#action/3.6'>Belleza</NavDropdown.Item>
             </NavDropdown>
 
-            <Nav.Link href='#pricing' className='custom-text-color'>Electronica</Nav.Link>
-            <Nav.Link href='#pricing' className='custom-text-color'>Automovilismo</Nav.Link>
-            <Nav.Link href='#features' className='custom-text-color'>Juegos</Nav.Link>
-            <Nav.Link href='#pricing' className='custom-text-color'>Jardin</Nav.Link>
-            <Nav.Link href='#features' className='custom-text-color'>Musica</Nav.Link>
-            <Nav.Link href='#pricing' className='custom-text-color'>Juguetes</Nav.Link>
-            <Nav.Link href='#features' className='custom-text-color'>Libros</Nav.Link>
-            <Nav.Link href='#pricing' className='custom-text-color'>Supermercado</Nav.Link>
+            <Nav.Link href='Electronica' className='custom-text-color'>Electronica</Nav.Link>
+            <Nav.Link href='Automovilismo' className='custom-text-color'>Automovilismo</Nav.Link>
+            <Nav.Link href='Juegos' className='custom-text-color'>Juegos</Nav.Link>
+            <Nav.Link href='Jardin' className='custom-text-color'>Jardin</Nav.Link>
+            <Nav.Link href='Musica' className='custom-text-color'>Musica</Nav.Link>
+            <Nav.Link href='Juguetes' className='custom-text-color'>Juguetes</Nav.Link>
+            <Nav.Link href='Libros' className='custom-text-color'>Libros</Nav.Link>
+            <Nav.Link href='Supermercado' className='custom-text-color'>Supermercado</Nav.Link>
 
           </Nav>
           <Nav>
-            <Nav.Link href='#deets' className='custom-text-color'>Crea tu cuenta</Nav.Link>
-            <Nav.Link eventKey={2} href='#memes' className='custom-text-color'> Ingresar </Nav.Link>
-            <Nav.Link href='#pricing' className='custom-text-color'>Carrito</Nav.Link>
+            <Nav.Link href='CrearCuenta' onClick={loginRoute} className='custom-text-color'>Crea tu cuenta</Nav.Link>
+            <Nav.Link eventKey={2} href='Ingresar' className='custom-text-color' onClick={signinRoute}> Ingresar </Nav.Link>
+            <Nav.Link href='Carrito' className='custom-text-color'>Carrito</Nav.Link>
 
           </Nav>
         </Navbar.Collapse>
