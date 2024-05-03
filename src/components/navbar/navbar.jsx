@@ -13,6 +13,9 @@ function NavegationBar () {
   const signinRoute = () => {
     navigate('/signin')
   }
+  const cartRoute = () => {
+    navigate('/cart')
+  }
 
   return (
     <Navbar collapseOnSelect expand='lg' className='navegationText text-bg-danger'>
@@ -40,9 +43,9 @@ function NavegationBar () {
 
           </Nav>
           <Nav>
-            <Nav.Link href='CrearCuenta' onClick={loginRoute} className='custom-text-color'>Crea tu cuenta</Nav.Link>
-            <Nav.Link eventKey={2} href='Ingresar' className='custom-text-color' onClick={signinRoute}> Ingresar </Nav.Link>
-            <Nav.Link href='Carrito' className='custom-text-color'>Carrito</Nav.Link>
+            <Nav.Link onClick={loginRoute} className='custom-text-color'>Crea tu cuenta</Nav.Link>
+            <Nav.Link eventKey={2} className='custom-text-color' onClick={signinRoute}> Ingresar </Nav.Link>
+            <Nav.Link onClick={cartRoute} className='custom-text-color'>Carrito</Nav.Link>
 
           </Nav>
         </Navbar.Collapse>

@@ -6,8 +6,13 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
 import './searcherBar.css'
+import { useNavigate } from 'react-router-dom'
 
 function SearcherBar () {
+  const navigate = useNavigate()
+  const indexRoute = () => {
+    navigate('/')
+  }
   return (
     <>
       <Navbar collapseOnSelect expand='lg' className='text-bg-danger'>
@@ -15,7 +20,7 @@ function SearcherBar () {
           <Form inline className=' col-xxl'>
             <Row>
               <Col className='col-4'>
-                <h4>ShopTrends</h4>
+                <href className='h3' onClick={indexRoute}>ShopTrends</href>
               </Col>
 
               <Col className='col-3'>

@@ -1,0 +1,28 @@
+.component-login {
+    background-color: rgba(248, 248, 248, 0.785);
+    border: 1px solid rgba(192, 191, 191, 0.944);
+    padding: 15px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    
+  }
+
+  .input-width{
+    width: 100%;
+  }
+
+  .input-name{
+    margin-right: 20px;
+  }
+
+  .borders {
+    border: 1px solid rgba(11, 10, 10, 0.95) ;
+  }
+
+  ul {
+    padding-left: 0; 
+
+  }
+
+  .border {
+    border: solid 3px red;
+  }

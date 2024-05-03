@@ -3,9 +3,10 @@ import AnnouncementBar from './components/announcementBar/announcementBar'
 import Cards from './components/cards/cards'
 import SearcherBar from './components/searcherBar/seacherBar'
 import NavegationBar from './components/navbar/navbar'
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Signin from './components/signin/signin'
-import Login from './components/login/login'
+import LoginForm from './components/login/login'
+import Cart from './components/cart/cart'
 
 function App () {
   return (
@@ -14,11 +15,12 @@ function App () {
         <AnnouncementBar />
         <SearcherBar />
         <NavegationBar />
-        <Cards />
-        <Routes>
-          <Route path='/login' component={Login} />
 
-          <Route path='/signin' component={Signin} />
+        <Routes>
+          <Route exact path='/' element={<Cards />} />
+          <Route path='/login' element={<LoginForm />} />
+          <Route path='/signin' element={<Signin />} />
+          <Route path='/cart' element={<Cart />} />
         </Routes>
       </Router>
     </>
