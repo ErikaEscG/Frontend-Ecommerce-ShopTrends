@@ -4,6 +4,7 @@ import Navbar from 'react-bootstrap/Navbar'
 import NavDropdown from 'react-bootstrap/NavDropdown'
 import './navbar.css'
 import { useNavigate } from 'react-router-dom'
+import { FaCartShopping } from 'react-icons/fa6'
 
 function NavegationBar () {
   const navigate = useNavigate()
@@ -45,7 +46,7 @@ function NavegationBar () {
           <Nav>
             <Nav.Link onClick={loginRoute} className='custom-text-color'>Crea tu cuenta</Nav.Link>
             <Nav.Link eventKey={2} className='custom-text-color' onClick={signinRoute}> Ingresar </Nav.Link>
-            <Nav.Link onClick={cartRoute} className='custom-text-color'>Carrito</Nav.Link>
+            <Nav.Link onClick={cartRoute} className='custom-text-color'> <FaCartShopping /></Nav.Link>
 
           </Nav>
         </Navbar.Collapse>

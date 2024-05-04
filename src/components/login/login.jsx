@@ -19,6 +19,7 @@ function LoginForm () {
                   placeholder='Nombre(s)'
                   type='text'
                   name='Nombre'
+                  className='input-border'
                 />
               </div>
               <div>
@@ -26,6 +27,7 @@ function LoginForm () {
                   placeholder='Apellidos'
                   type='text'
                   name='Apellidos'
+                  className='input-border'
                 />
               </div>
             </ul>
@@ -35,7 +37,7 @@ function LoginForm () {
                   placeholder='Correo electronico'
                   type='email'
                   name='email'
-                  className='input-width'
+                  className='input-width input-border'
                 />
               </span>
             </ul>
@@ -45,7 +47,7 @@ function LoginForm () {
                 placeholder='Contraseña'
                 type='Password'
                 name='Password'
-                className='input-width'
+                className='input-width input-border'
               />
 
             </ul>
@@ -55,7 +57,7 @@ function LoginForm () {
                 placeholder='Ingresa nuevamente tu contraseña'
                 type='Password'
                 name='Password'
-                className='input-width'
+                className='input-width input-border'
               />
 
             </ul>

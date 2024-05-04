@@ -3,8 +3,6 @@ import { useForm } from 'react-hook-form'
 import './signin.css'
 
 function SigninForm () {
-  const { register } = useForm()
-
   return (
     <>
       <div className='d-flex justify-content-center '>
@@ -18,7 +16,7 @@ function SigninForm () {
                   placeholder='Correo electronico'
                   type='email'
                   name='email'
-                  className='input-width'
+                  className='input-width input-border'
                 />
               </span>
             </ul>
@@ -28,7 +26,7 @@ function SigninForm () {
                 placeholder='Contraseña'
                 type='Password'
                 name='Password'
-                className='input-width'
+                className='input-width input-border'
               />
 
             </ul>
