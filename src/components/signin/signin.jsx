@@ -1,22 +1,41 @@
-import React from 'react'
 import { useForm } from 'react-hook-form'
 import './signin.css'
+import { useState, useEffect } from 'react'
 
 function SigninForm () {
+  const [formData, setFormData] = useState({
+    email: '',
+    password: ''
+  })
+  const { email, password } = formData
+
+  const onChange = (e) => {
+    setFormData((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value
+    }))
+  }
+
+  const onSubmit = (e) => {
+    e.preventDefault()
+  }
   return (
     <>
+
       <div className='d-flex justify-content-center '>
         <div className='d-inline-block component-login'>
           <p className='h2 text-center text-danger'>Inicia sesión</p>
 
-          <form>
+          <form onSubmit={onSubmit}>
             <ul>
               <span>
                 <input
                   placeholder='Correo electronico'
                   type='email'
                   name='email'
+                  value={email}
                   className='input-width input-border'
+                  onChange={onChange}
                 />
               </span>
             </ul>
@@ -24,9 +43,11 @@ function SigninForm () {
 
               <input
                 placeholder='Contraseña'
-                type='Password'
-                name='Password'
+                type='password'
+                name='password'
+                value={password}
                 className='input-width input-border'
+                onChange={onChange}
               />
 
             </ul>
@@ -58,6 +79,7 @@ function SigninForm () {
 
         </div>
       </div>
+
     </>
   )
 }
