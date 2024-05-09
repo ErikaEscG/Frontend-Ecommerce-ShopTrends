@@ -5,12 +5,14 @@ import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import Container from 'react-bootstrap/Container'
 import './cards.css'
-import { TextInputContext } from '../../context/contex'
+import { TextInputContext } from '../../context/searchContex'
+import { useCategory } from '../../context/navbarContext'
 
 const API_URL = 'https://ecommerce-json-jwt.onrender.com'
 
 function Cards () {
   const { text } = useContext(TextInputContext)
+  const { selectedCategory } = useCategory()
   const [products, setProducts] = useState([])
 
   useEffect(() => {
@@ -26,14 +28,14 @@ function Cards () {
     fetchProducts()
   }, [])
 
-  const array = products.filter((item) => {
-    return item.product_name.toLowerCase().includes(text.toLowerCase())
-  })
+  const filteredProducts = selectedCategory
+    ? products.filter((product) => product.category === selectedCategory)
+    : products.filter((product) => product.product_name.toLowerCase().includes(text.toLowerCase()))
 
   return (
     <Container>
       <div className='d-flex justify-content-between flex-wrap'>
-        {array.map((product) => (
+        {filteredProducts.map((product) => (
           <Card key={product.id} style={{ width: '300px', marginBottom: '20px' }}>
             <Card.Img className='image align-self-center' variant='top' src={product.image} alt={product.product_name} />
             <Card.Body className='d-flex align-content-between flex-wrap justify-content-center'>

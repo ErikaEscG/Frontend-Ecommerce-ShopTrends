@@ -8,6 +8,7 @@ import { FaCartShopping } from 'react-icons/fa6'
 
 function NavegationBar () {
   const navigate = useNavigate()
+
   const loginRoute = () => {
     navigate('/login')
   }
@@ -18,6 +19,28 @@ function NavegationBar () {
     navigate('/cart')
   }
 
+  const handleCategorySelect = (categoryId) => {
+    // Navegar a la página de productos con la categoría seleccionada
+    navigate(`/products/${categoryId}`)
+  }
+  const categoryMap = {
+    Niños: '5fbc19a65a3f794d72471163',
+    Zapatos: '5fbc19a65a3f794d72471164',
+    // Todos con el ID
+    Deportes: '3',
+    Joyeria: '4',
+    Bebés: '5',
+    Belleza: '6',
+    Electronica: '7',
+    Automovilismo: '8',
+    Juegos: '9',
+    Jardin: '10',
+    Musica: '11',
+    Juguetes: '12',
+    Libros: '13',
+    Supermercado: '14'
+  }
+
   return (
     <Navbar collapseOnSelect expand='lg' className='navegationText text-bg-danger'>
       <Container>
@@ -25,15 +48,17 @@ function NavegationBar () {
         <Navbar.Collapse id='responsive-navbar-nav' className='custom-margin'>
           <Nav className='me-auto'>
             <NavDropdown title='Moda' id='collapsible-nav-dropdown' className='custom-text-color'>
-              <NavDropdown.Item href='#action/3.1'>Niños</NavDropdown.Item>
+
+              <NavDropdown.Item onClick={() => handleCategorySelect(categoryMap['Niños'])}>Niños</NavDropdown.Item>
+              {/* Todos con el oncick */}
               <NavDropdown.Item href='#action/3.2'>Zapatos</NavDropdown.Item>
               <NavDropdown.Item href='#action/3.3'>Deportes</NavDropdown.Item>
               <NavDropdown.Item href='#action/3.4'>Joyeria</NavDropdown.Item>
-              <NavDropdown.Item href='#action/3.5'>Bebés</NavDropdown.Item>
+              <NavDropdown.Item href='#action/3.5'>Kids</NavDropdown.Item>
               <NavDropdown.Item href='#action/3.6'>Belleza</NavDropdown.Item>
             </NavDropdown>
 
-            <Nav.Link href='Electronica' className='custom-text-color'>Electronica</Nav.Link>
+            <Nav.Link href='Electronica' className='custom-text-color'>Computers</Nav.Link>
             <Nav.Link href='Automovilismo' className='custom-text-color'>Automovilismo</Nav.Link>
             <Nav.Link href='Juegos' className='custom-text-color'>Juegos</Nav.Link>
             <Nav.Link href='Jardin' className='custom-text-color'>Jardin</Nav.Link>

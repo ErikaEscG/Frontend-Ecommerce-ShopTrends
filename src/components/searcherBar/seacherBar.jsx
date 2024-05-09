@@ -9,7 +9,7 @@ import './searcherBar.css'
 import { useNavigate } from 'react-router-dom'
 import { useState, useContext } from 'react'
 
-import { TextInputContext } from '../../context/contex'
+import { TextInputContext } from '../../context/searchContex'
 
 function SearcherBar () {
   const { text, setText } = useContext(TextInputContext)

@@ -7,25 +7,31 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import SigninForm from './components/signin/signin'
 import LoginForm from './components/login/login'
 import Cart from './components/cart/cart'
-import { TextInputProvider } from './context/contex'
+import { TextInputProvider } from './context/searchContex'
+import { CategoryProvider } from './context/navbarContext'
+CategoryProvider
 
 function App () {
   return (
     <>
-      <TextInputProvider>
-        <Router>
-          <AnnouncementBar />
-          <SearcherBar />
-          <NavegationBar />
+      <CategoryProvider>
+        <TextInputProvider>
+          <Router>
+            <AnnouncementBar />
+            <SearcherBar />
+            <NavegationBar />
 
-          <Routes>
-            <Route exact path='/' element={<Cards />} />
-            <Route path='/login' element={<LoginForm />} />
-            <Route path='/signin' element={<SigninForm />} />
-            <Route path='/cart' element={<Cart />} />
-          </Routes>
-        </Router>
-      </TextInputProvider>
+            <Routes>
+              <Route exact path='/' element={<Cards />} />
+              <Route path='/login' element={<LoginForm />} />
+              <Route path='/signin' element={<SigninForm />} />
+
+              <Route exact path='/' element={<Cards />} />
+
+            </Routes>
+          </Router>
+        </TextInputProvider>
+      </CategoryProvider>
     </>
   )
 }
