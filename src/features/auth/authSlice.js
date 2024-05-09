@@ -10,6 +10,13 @@ const initialState = {
   message: ''
 }
 
+/* export const register = createAsyncThunk('auth/registrer', async (user, thunkApi) => {
+  try {
+    return await autyhService.registrer(user)
+
+  } catch (error)
+}) */
+
 export const authSlice = createSlice({
   name: 'auth',
   initialState,
@@ -23,7 +30,7 @@ export const authSlice = createSlice({
   }
   /* extraReducers: () => {
 
-  } */
+  }  */
 }
 )
 

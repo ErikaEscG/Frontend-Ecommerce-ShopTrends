@@ -1,14 +1,16 @@
 import axios from 'axios'
 import 'bootstrap/dist/css/bootstrap.css'
-import { useState, useEffect } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import Container from 'react-bootstrap/Container'
 import './cards.css'
+import { TextInputContext } from '../../context/contex'
 
 const API_URL = 'https://ecommerce-json-jwt.onrender.com'
 
 function Cards () {
+  const { text } = useContext(TextInputContext)
   const [products, setProducts] = useState([])
 
   useEffect(() => {
@@ -24,10 +26,14 @@ function Cards () {
     fetchProducts()
   }, [])
 
+  const array = products.filter((item) => {
+    return item.product_name.toLowerCase().includes(text.toLowerCase())
+  })
+
   return (
     <Container>
       <div className='d-flex justify-content-between flex-wrap'>
-        {products.map((product) => (
+        {array.map((product) => (
           <Card key={product.id} style={{ width: '300px', marginBottom: '20px' }}>
             <Card.Img className='image align-self-center' variant='top' src={product.image} alt={product.product_name} />
             <Card.Body className='d-flex align-content-between flex-wrap justify-content-center'>

@@ -7,12 +7,23 @@ import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
 import './searcherBar.css'
 import { useNavigate } from 'react-router-dom'
+import { useState, useContext } from 'react'
+
+import { TextInputContext } from '../../context/contex'
 
 function SearcherBar () {
+  const { text, setText } = useContext(TextInputContext)
+
+  const changeText = (e) => {
+    console.log('comparación onchange ', text)
+    setText(e.target.value)
+  }
+
   const navigate = useNavigate()
   const indexRoute = () => {
     navigate('/')
   }
+
   return (
     <>
       <Navbar collapseOnSelect expand='lg' className='text-bg-danger'>
@@ -28,6 +39,8 @@ function SearcherBar () {
                   type='text'
                   placeholder='Busca un producto'
                   className=' mr-sm-2'
+                  onChange={changeText}
+                  value={text}
                 />
               </Col>
               <Col className='col-4'>
