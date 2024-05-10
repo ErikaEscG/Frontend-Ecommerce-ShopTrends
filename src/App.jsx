@@ -9,7 +9,6 @@ import LoginForm from './components/login/login'
 import Cart from './components/cart/cart'
 import { TextInputProvider } from './context/searchContex'
 import { CategoryProvider } from './context/navbarContext'
-CategoryProvider
 
 function App () {
   return (

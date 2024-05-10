@@ -20,11 +20,10 @@ function NavegationBar () {
   }
 
   const handleCategorySelect = (categoryId) => {
-    // Navegar a la página de productos con la categoría seleccionada
-    navigate(`/products/${categoryId}`)
+    navigate(`/items/${categoryId}`)
   }
   const categoryMap = {
-    Niños: '5fbc19a65a3f794d72471163',
+    Kids: '5fbc19a65a3f794d72471163',
     Zapatos: '5fbc19a65a3f794d72471164',
     // Todos con el ID
     Deportes: '3',
@@ -49,7 +48,7 @@ function NavegationBar () {
           <Nav className='me-auto'>
             <NavDropdown title='Moda' id='collapsible-nav-dropdown' className='custom-text-color'>
 
-              <NavDropdown.Item onClick={() => handleCategorySelect(categoryMap['Niños'])}>Niños</NavDropdown.Item>
+              <NavDropdown.Item onClick={() => handleCategorySelect(categoryMap.Kids)}>Niños</NavDropdown.Item>
               {/* Todos con el oncick */}
               <NavDropdown.Item href='#action/3.2'>Zapatos</NavDropdown.Item>
               <NavDropdown.Item href='#action/3.3'>Deportes</NavDropdown.Item>
