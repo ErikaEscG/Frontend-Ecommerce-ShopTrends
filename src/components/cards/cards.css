@@ -4,4 +4,34 @@
     height: 200px;
 }
 
+.fb-location-top {
+    position: fixed;
+    bottom: 75px;
+    right: 10px;
+    cursor: pointer;
+}
+.fb-location {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    cursor: pointer;
+}
 
+.fb {
+    background-color: brown;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+
+.arrow {
+    color: rgb(254, 252, 249);
+    line-height: 50px
+    
+}

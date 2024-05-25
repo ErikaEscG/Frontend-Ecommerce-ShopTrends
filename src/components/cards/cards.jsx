@@ -4,6 +4,7 @@ import { useContext, useEffect, useState } from 'react'
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import Container from 'react-bootstrap/Container'
+import { FaArrowUp, FaArrowDown } from 'react-icons/fa'
 import './cards.css'
 import { TextInputContext } from '../../context/searchContex'
 import { useCategory } from '../../context/navbarContext'
@@ -32,6 +33,18 @@ function Cards () {
     ? products.filter((product) => product.category === selectedCategory)
     : products.filter((product) => product.product_name.toLowerCase().includes(text.toLowerCase()))
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })
+  }
+  const scrollToDown = () => {
+    window.scrollTo({
+      top: document.documentElement.scrollHeight,
+      behavior: 'smooth'
+    })
+  }
   return (
     <Container>
       <div className='d-flex justify-content-between flex-wrap'>
@@ -47,6 +60,16 @@ function Cards () {
             </Card.Body>
           </Card>
         ))}
+      </div>
+      <div className='fb-location-top' onClick={scrollToTop}>
+        <div className='fb'>
+          <FaArrowUp className='arrow' />
+        </div>
+      </div>
+      <div className='fb-location' onClick={scrollToDown}>
+        <div className='fb'>
+          <FaArrowDown className='arrow' />
+        </div>
       </div>
     </Container>
   )

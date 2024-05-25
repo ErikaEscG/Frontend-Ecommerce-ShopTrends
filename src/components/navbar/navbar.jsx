@@ -46,7 +46,7 @@ function NavegationBar () {
         {/* <Navbar.Toggle aria-controls='responsive-navbar-nav' /> */}
         <Navbar.Collapse id='responsive-navbar-nav' className='custom-margin'>
           <Nav className='me-auto'>
-            <NavDropdown title='Moda' id='collapsible-nav-dropdown' className='custom-text-color'>
+            <NavDropdown title={<span className='nav-dropdown-title'>Moda</span>} id='collapsible-nav-dropdown' className='custom-text-color'>
 
               <NavDropdown.Item onClick={() => handleCategorySelect(categoryMap.Kids)}>Niños</NavDropdown.Item>
               {/* Todos con el oncick */}
@@ -57,7 +57,7 @@ function NavegationBar () {
               <NavDropdown.Item href='#action/3.6'>Belleza</NavDropdown.Item>
             </NavDropdown>
 
-            <Nav.Link href='Electronica' className='custom-text-color'>Computers</Nav.Link>
+            <Nav.Link href='Electronica' className='custom-text-color'>Electronica</Nav.Link>
             <Nav.Link href='Automovilismo' className='custom-text-color'>Automovilismo</Nav.Link>
             <Nav.Link href='Juegos' className='custom-text-color'>Juegos</Nav.Link>
             <Nav.Link href='Jardin' className='custom-text-color'>Jardin</Nav.Link>
